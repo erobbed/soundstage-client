@@ -22,3 +22,46 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.ui.inverted.segment{
+  padding-top: 0;
+}
+
+.ui.menu:not(.vertical) .item>.button{
+  top: 2px;
+}
+
+.ui.card>:first-child, .ui.cards>.card>:first-child.artist{
+  border-radius: 500rem !important;
+}
+
+h1{
+  color: white;
+}
+
+h2{
+  color: white;
+}
+
+.ui.card>.content>.header, .ui.cards>.card>.content>.header.artist{
+  color: white;
+}
+
+.ui.card>.content, .ui.cards>.card>.content.artist{
+  background: none;
+  border: none;
+}
+
+.ui.cards>.card.artist{
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ui.inverted.segment.nav, .ui.primary.inverted.segment.nav{
+  background: rgb(10,10,10)
+}
+
+.ui.secondary.inverted.pointing.menu.main-nav{
+  border-color: transparent
+}

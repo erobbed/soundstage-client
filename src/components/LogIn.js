@@ -9,10 +9,11 @@ const LogIn = (props) => {
     return <Redirect to='/' />
   }
   return (
-    <div>
-      <center>
-        <Button as="a" href="http://localhost:3000/api/v1/login">Log In With Spotify</Button>
-      </center>
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexWrap: 'wrap'}}>
+      <div style={{width: '300px'}}>
+        <img width="200" src="Spotify_logo_with_text.svg.png" alt="Spotify"/>
+        <Button className="login" as="a" href="http://localhost:3000/api/v1/login">Log In With Spotify</Button>
+      </div>
     </div>
   )
 }
