@@ -65,3 +65,9 @@ h2{
 .ui.secondary.inverted.pointing.menu.main-nav{
   border-color: transparent
 }
+
+.ui.button.login{
+  background: rgb(30,214,96);
+  
+  color: black;
+}
