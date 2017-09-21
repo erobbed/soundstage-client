@@ -16,7 +16,9 @@ export function authorize(code){
       .then(res => {
         console.log("fetched, now logging in");
         dispatch({type: 'LOG_IN', payload: {
-            user: res.user, jwt: res.jwt
+            user: res.user,
+            jwt: res.jwt,
+            artists: res.user.artists
           }
       })
     })

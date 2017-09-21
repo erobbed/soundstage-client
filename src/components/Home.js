@@ -11,14 +11,14 @@ const Home = (props) => {
       <h1>Welcome to SoundStage!</h1>
       <h2>username: {props.user.username}</h2>
       <ul>
-        {props.user.artists.map((artist, index) => <li key={index}>{artist.name}</li>)}
+        {props.artists.map((artist, index) => <li key={index}><img src={artist.image_url} alt={artist.name}/>{artist.name}</li>)}
       </ul>
     </div>
   )
 }
 
 function mapStateToProps(state) {
-  return {user: state.auth.user}
+  return {user: state.auth.user, artists: state.auth.artists}
 }
 
 export default connect(mapStateToProps)(Home)
