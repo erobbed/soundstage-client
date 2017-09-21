@@ -8,7 +8,6 @@ import { bindActionCreators } from 'redux'
 
 class NavBar extends React.Component {
   state = {}
-
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {

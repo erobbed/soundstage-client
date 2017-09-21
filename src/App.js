@@ -13,12 +13,12 @@ const AuthedHome = isAuthenticated(Home)
 
 class App extends Component {
   render() {
-    console.log("I'm in App!")
+    console.log("I'm in App")
     return (
       <div className="App">
         <div className="App-intro">
           <Switch>
-            <Route exact path="/" render={(props) => <AuthedHome {...props} loggedIn={this.props.loggedIn}/>}/>
+            <Route exact path="/" render={(props) => <AuthedHome {...props} loading={this.props.loading}/>}/>
             <Route exact path="/login" render={() => <LogIn loggedIn={this.props.loggedIn}/>}/>
             <Route exact path="/login/authorize" component={AuthHandler}/>
           </Switch>
@@ -29,8 +29,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return {loggedIn: state.auth.loggedIn}
+  return {loggedIn: state.auth.loggedIn, loading: state.auth.loading}
 }
-// export default App
 
 export default withRouter(connect(mapStateToProps)(App));
