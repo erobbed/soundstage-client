@@ -4,7 +4,9 @@ function authReducer(state={
   user: {
     username: null,
     spotify_url: null,
-    profile_img_url: null}
+    profile_img_url: null,
+    artists: []
+  }
 }, action){
   switch (action.type) {
     case 'LOG_IN':
