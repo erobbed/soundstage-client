@@ -6,7 +6,8 @@ function authReducer(state={
     profile_img_url: null}
 }, action){
   switch (action.type) {
-    case "LOG_IN":
+    case 'LOG_IN':
+      localStorage.setItem('jwt', action.payload.jwt)
       return Object.assign({}, state, {loggedIn: true, user: action.payload.user})
     case "LOG_OUT":
       localStorage.removeItem('jwt')

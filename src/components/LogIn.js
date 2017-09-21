@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
 
-const LogIn = () => {
+const LogIn = (props) => {
+  console.log("I'm in the LogIn component", props);
   return (
     <div>
       <center>

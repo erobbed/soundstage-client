@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router'
+import { connect } from 'react-redux'
 import LogIn from './components/LogIn'
 import Home from './components/Home'
-import NavBar from './components/NavBar'
+import isAuthenticated from './components/hocs/AuthWrapper'
 import AuthHandler from './auth/AuthHandler'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
+import { withRouter } from 'react-router-dom'
+
+const AuthedHome = isAuthenticated(Home)
 
 class App extends Component {
-
   render() {
+    console.log("I'm in App!")
     return (
       <div className="App">
-        <NavBar />
         <div className="App-intro">
           <Switch>
-            <Route exact path="/login" component={LogIn}/>
-            <Route exact path="/home" component={Home}/>
-            <Route exact path="/authorize" component={AuthHandler}/>
+            <Route exact path="/" render={(props) => <AuthedHome {...props} loggedIn={this.props.loggedIn}/>}/>
+            <Route exact path="/login" render={() => <LogIn loggedIn={this.props.loggedIn}/>}/>
+            <Route exact path="/login/authorize" component={AuthHandler}/>
           </Switch>
-          {this.props.loggedIn ? null : <Redirect to='/login' />}
         </div>
       </div>
     );
   }
 }
 
-
 function mapStateToProps(state){
   return {loggedIn: state.auth.loggedIn}
 }
+// export default App
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

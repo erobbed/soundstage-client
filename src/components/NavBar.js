@@ -12,7 +12,7 @@ class NavBar extends React.Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    console.log(this.props)
+    console.log("Navbar Props", this.props)
     const { activeItem } = this.state
     const items = this.props.loggedIn ? [
       <Menu.Item as={NavLink} to="/home" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home">

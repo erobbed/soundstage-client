@@ -12,8 +12,10 @@ export function authorize(code){
     return fetch(`http://localhost:3000/api/v1/users?code=${code}`, body)
     .then(res => res.json())
       .then(res => {
-          localStorage.setItem('jwt', res.jwt);
-           dispatch({type: 'LOG_IN', payload: {user: res.user}})
+        dispatch({type: 'LOG_IN', payload: {
+            user: res.user, jwt: res.jwt
+          }
+      })
     })
   }
 }

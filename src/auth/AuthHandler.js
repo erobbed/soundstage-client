@@ -6,9 +6,9 @@ import { bindActionCreators } from 'redux'
 class AuthHandler extends React.Component{
   componentWillMount(){
     const code = this.props.location.search.split("=")[1]
-    this.props.authorize(code).then(this.props.history.push('/home'))
+    this.props.authorize(code).then(this.props.history.push('/'))
   }
-  
+
   render(){
     return (
       <div></div>
