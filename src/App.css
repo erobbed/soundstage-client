@@ -68,6 +68,16 @@ h2{
 
 .ui.button.login{
   background: rgb(30,214,96);
-  
   color: black;
+  border-color: rgb(30,214,96);
+  border-width: .25px;
+  border-style: solid
+}
+
+.ui.button.login:hover{
+  background: rgb(70,70,70);
+  color: white;
+  border-color: white;
+  border-width: .25px;
+  border-style: solid
 }
