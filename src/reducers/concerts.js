@@ -1,11 +1,12 @@
-function concertsReducer(state = [], action){
+function concertsReducer(state={list: [], clickedArtist: null}, action){
   switch (action.type) {
-    case "ADD_USER":
-      return state
+    case "GET_CONCERTS":
+      return Object.assign({}, state, {
+        list: action.payload.concerts, clickedArtist: action.payload.artist
+      })
     default:
       return state
   }
-
 }
 
 export default concertsReducer

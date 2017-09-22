@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 
 const ArtistsList = (props) => {
   const artists = props.artists.map((artist, index) => <Artist key={index} artist={artist} />)
-  console.log("Artists", artists);
   return(
     <Card.Group>
       {artists}

@@ -13,7 +13,6 @@ const AuthedHome = isAuthenticated(Home)
 
 class App extends Component {
   render() {
-    console.log("I'm in App")
     return (
       <div className="App">
         <div className="App-intro">

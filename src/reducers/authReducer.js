@@ -13,7 +13,7 @@ function authReducer(state={
       localStorage.setItem('jwt', action.payload.jwt)
       return Object.assign({}, state, {loggedIn: true, loading: false, user: action.payload.user, artists: action.payload.artists})
     case 'LOG_OUT':
-      localStorage.removeItem('jwt')
+      localStorage.clear()
       return Object.assign({}, state, {loggedIn: false, user: action.payload.user})
     case 'LOADING':
       return Object.assign({}, state, {loading: true})

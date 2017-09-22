@@ -43,6 +43,16 @@
 
 .ui.card>:first-child, .ui.cards>.card>:first-child.artist{
   border-radius: 500rem !important;
+  border: solid;
+  border-width: 2px;
+  border-color: transparent
+}
+
+.ui.card>:first-child, .ui.cards>.card>:first-child.artist:hover{
+  border-radius: 500rem !important;
+  border: solid;
+  border-width: 2px;
+  border-color: rgb(30,214,96);
 }
 
 h1#title{
@@ -55,7 +65,7 @@ h2{
   text-align: left;
 }
 
-div.top-artists{
+div.top{
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: rgb(40,40,40);
@@ -63,6 +73,8 @@ div.top-artists{
   margin: 0 auto;
   width: 95%;
 }
+
+
 
 .ui.card>.content>.header, .ui.cards>.card>.content>.header.artist{
   color: white;
@@ -75,6 +87,12 @@ div.top-artists{
 
 .ui.cards{
   padding-top: 50px;
+  justify-content: center;
+}
+
+.ui.card>.image, .ui.cards>.card>.image.concert{
+  height: auto;
+  width: 100% !important;
 }
 
 .ui.cards>.card.artist{
@@ -82,6 +100,15 @@ div.top-artists{
   -webkit-box-shadow: none;
   box-shadow: none;
   margin: auto;
+}
+
+.ui.cards>.card.artist:hover{
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: auto;
+  transform: none;
+  -webkit-transform: none;
 }
 
 .ui.inverted.segment.nav, .ui.primary.inverted.segment.nav{
@@ -108,12 +135,16 @@ div.top-artists{
   border-style: solid
 }
 
+.ui.cards.concert{
+  /*text-align: center;*/
+}
+
 body.body{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#45484d+0,181818+26 */
-background: rgb(69,72,77); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(24,24,24,1) 26%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(24,24,24,1) 26%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(69,72,77,1) 0%,rgba(24,24,24,1) 26%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#181818',GradientType=0 ); /* IE6-9 */
-
+  background: rgb(69,72,77); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(24,24,24,1) 26%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(24,24,24,1) 26%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(69,72,77,1) 0%,rgba(24,24,24,1) 26%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#181818',GradientType=0 ); /* IE6-9 */
+  background-repeat: no-repeat;
 }
