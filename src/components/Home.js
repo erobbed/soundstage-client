@@ -9,7 +9,7 @@ const Home = (props) => {
   return (
     <div>
       <NavBar className="nav"/>
-      <h1>Welcome to SoundStage!</h1>
+      <h1 id="title">SoundStage</h1>
       <center>
         <ArtistsContainer/>
       </center>

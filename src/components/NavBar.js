@@ -25,7 +25,7 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} to="/" name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
         <Menu.Menu position="right" key="right">
           <Menu.Item key="logout">
-            <Button basic inverted secondary color="black" onClick={this.props.logOut}>Log Out</Button>
+            <Button basic inverted secondary color="black" id="logout" onClick={this.props.logOut}>Log Out</Button>
           </Menu.Item>
           <Menu.Item key="bubble">
             <Image avatar src={this.props.user.profile_img_url} alt={this.props.user.username}/>
