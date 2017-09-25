@@ -6,10 +6,9 @@ import Img from 'react-image'
 
 class Concert extends React.Component{
   render(){
-    console.log(this.props.concert);
     return (
       <Card className="concert">
-        <Img src={[this.props.concert.seatmap, 'default.png']} className="image concert" alt="img"/>
+        <Img src={[this.props.concert.seatmap, '/default.png']} className="image concert" alt="img"/>
         <Card.Content>
           <Card.Header>
             {this.props.concert.venue}

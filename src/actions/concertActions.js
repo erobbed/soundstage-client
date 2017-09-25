@@ -12,3 +12,11 @@ export function getConcerts(artist){
     }))
   }
 }
+
+export function view(clicked){
+  console.log("CLICK!");
+  return {
+    type: "VIEW_CONCERT",
+    payload: clicked
+  }
+}
