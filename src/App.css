@@ -8,6 +8,22 @@
   text-align: center;
 }
 
+.ui.loader.radio{
+  top: 30%;
+  left: 43%;
+}
+
+.ui.massive.loader.radio:after{
+  border: none;
+}
+
+.ui.massive.loader.radio:before{
+  border: none;
+  background-image: url('/Radio.svg');
+  height: 13.571429rem;
+  width: 17.571429rem
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
