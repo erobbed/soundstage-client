@@ -2,11 +2,15 @@ import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import { getConcerts } from '../actions/concertActions';
 import { connect } from 'react-redux';
+import {withRouter } from 'react-router'
 import { bindActionCreators } from 'redux';
 
 
 class Artist extends React.Component{
-  handleClick = () => this.props.getConcerts(this.props.artist)
+  handleClick = () => {
+    this.props.getConcerts(this.props.artist)
+    this.props.history.replace(`/artists/${this.props.artist.name}/concerts`)
+  }
 
   render(){
     return (
@@ -26,4 +30,4 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({getConcerts}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Artist)
+export default withRouter(connect(null, mapDispatchToProps)(Artist))

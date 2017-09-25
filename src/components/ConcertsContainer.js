@@ -3,7 +3,6 @@ import ConcertsList from './ConcertsList'
 import { connect } from 'react-redux'
 
 const ConcertsContainer = (props) => {
-
   return (
     <div>
       <div className="top">

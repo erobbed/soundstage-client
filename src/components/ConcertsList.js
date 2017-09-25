@@ -4,6 +4,7 @@ import { Card } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 const ConcertsList = (props) => {
+
   const concerts = props.concerts.map((concert, index) => <Concert key={index} concert={concert} />)
   return(
     <Card.Group>
@@ -13,7 +14,7 @@ const ConcertsList = (props) => {
 }
 
 function mapStateToProps(state){
-  return {concerts: state.concerts.list}
+  return {concerts: state.concerts.list, latlong: state.users.latlong}
 }
 
 export default connect(mapStateToProps)(ConcertsList)

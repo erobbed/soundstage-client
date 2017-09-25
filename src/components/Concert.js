@@ -1,12 +1,12 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import Img from 'react-image'
 // import { bindActionCreators } from 'redux';
 
 
 class Concert extends React.Component{
-
   render(){
+    console.log(this.props.concert);
     return (
       <Card className="concert">
         <Img src={[this.props.concert.seatmap, 'default.png']} className="image concert" alt="img"/>

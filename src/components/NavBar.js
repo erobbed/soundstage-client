@@ -8,9 +8,8 @@ import { Button, Image } from 'semantic-ui-react'
 // import Search from './Search'
 
 class NavBar extends React.Component {
-  state = {activeItem: 'Home'}
+  state = {}
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
 
   handleLogout = () => {
     this.props.logOut()
@@ -19,11 +18,12 @@ class NavBar extends React.Component {
 
   render() {
     const { activeItem } = this.state
-
+    
     return (
     <Segment inverted className="nav">
       <Menu inverted pointing secondary className="main-nav" size="tiny">
-        <Menu.Item as={NavLink} to="/" name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
+        <Menu.Item as={NavLink} to="/" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
+        <Menu.Item as={NavLink} to="/artists" exact name="My Artists" active={activeItem === 'My Artists'} onClick={this.handleItemClick} key="artists" />
         <Menu.Menu position="right" key="right">
           <Menu.Item key="logout">
             <Button basic inverted secondary color="black" id="logout" onClick={this.handleLogout}>Log Out</Button>

@@ -11,6 +11,8 @@ export function authorize(code){
 
   return (dispatch) => {
     dispatch({type: 'LOADING'})
+    const geo = navigator.geolocation
+    geo.getCurrentPosition((position) => dispatch({type: "SET_LOCATION", payload: position}) )
     return fetch(`http://localhost:3000/api/v1/users?code=${code}`, body)
     .then(res => res.json())
       .then(res => {
