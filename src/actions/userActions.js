@@ -17,9 +17,6 @@ export function userConcerts(jwt){
   )}
 }
 
-//add route on api to handle users/:user/concerts and controller method in concerts_controller: @user = User.find(current_user)
-//render json: {concerts: @user.concerts }
-
 
 export function addConcert(jwt, concert, id){
   const body = {
@@ -30,13 +27,31 @@ export function addConcert(jwt, concert, id){
       "Accept":"application/json"
     }
   }
-
   return(dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/concert=${concert.id}`, body)
+    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/${concert.id}`, body)
     .then(res => res.json())
     .then(res => dispatch({
-      type: 'ADD_CONCERT'
-      payload: res.concerts,
+      type: 'ADD_CONCERT',
+      payload: res.concerts
+    })
+  )}
+}
+
+export function removeConcert(jwt, concert, id){
+  const body = {
+    method: 'DELETE',
+    headers: {
+      "Authorization":`Bearer ${jwt}`,
+      "Content-Type":"application/json",
+      "Accept":"application/json"
+    }
+  }
+  return(dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/${concert.id}`, body)
+    .then(res => res.json())
+    .then(res => dispatch({
+      type: 'REMOVE_CONCERT',
+      payload: res.concerts
     })
   )}
 }

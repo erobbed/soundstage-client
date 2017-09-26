@@ -6,6 +6,7 @@ import LogIn from './components/LogIn'
 import Home from './components/Home'
 import ConcertsContainer from './components/ConcertsContainer'
 import ArtistsContainer from './components/ArtistsContainer'
+import ConcertsList from './components/ConcertsList'
 import isAuthenticated from './components/hocs/AuthWrapper'
 import AuthHandler from './auth/AuthHandler'
 import { currentUser } from './actions/authActions'
@@ -16,10 +17,11 @@ import { bindActionCreators } from 'redux'
 const AuthedHome = isAuthenticated(Home)
 const AuthedArtists = isAuthenticated(ArtistsContainer)
 const AuthedConcerts = isAuthenticated(ConcertsContainer)
+const AuthedList = isAuthenticated(ConcertsList)
 
 class App extends Component {
 
-  componentWillMount(){
+  componentDidMount(){
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       return this.props.currentUser(jwt)
@@ -34,6 +36,7 @@ class App extends Component {
             <Route exact path='/' render={(props) => <AuthedHome {...props} loading={this.props.loading}/>}/>
             <Route exact path='/artists' component={AuthedArtists}/>
             <Route exact path='/artists/:artist/concerts' component={AuthedConcerts} />
+            <Route exact path='/concerts' component={AuthedList}/>
             <Route exact path="/login" render={() => <LogIn loggedIn={this.props.loggedIn}/>}/>
             <Route exact path="/login/authorize" component={AuthHandler}/>
           </Switch>
