@@ -9,7 +9,7 @@ class Concert extends React.Component{
     return (
       <Card className="concert">
         <Img src={[this.props.concert.seatmap, '/default.png']} className="image concert" alt="img"/>
-        <Card.Content>
+        <Card.Content className="concert">
           <Card.Header>
             {this.props.concert.venue}
           </Card.Header>

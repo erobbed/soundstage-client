@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+
 *{
   font-family: 'Montserrat', sans-serif;
 }
@@ -11,6 +12,23 @@
 .ui.loader.radio{
   top: 30%;
   left: 43%;
+}
+
+iframe{
+  height: 675px;
+  width: 500px;
+
+    -ms-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
 }
 
 .ui.massive.loader.radio:after{
@@ -127,6 +145,11 @@ div.top{
   -webkit-transform: none;
 }
 
+.ui.card>.content.concert{
+  background: rgb(30,214,96);
+  font-family: 'Montserrat', sans-serif;
+}
+
 .ui.inverted.segment.nav, .ui.primary.inverted.segment.nav{
   background: rgb(10,10,10)
 }
@@ -149,10 +172,6 @@ div.top{
   border-color: white;
   border-width: .25px;
   border-style: solid
-}
-
-.ui.cards.concert{
-  /*text-align: center;*/
 }
 
 body.body{

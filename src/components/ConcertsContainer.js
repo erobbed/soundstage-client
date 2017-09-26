@@ -1,8 +1,8 @@
 import React from 'react'
-// import ConcertsList from './ConcertsList'
 import MapContainer from './MapContainer'
 import { connect } from 'react-redux'
 import Concert from './Concert'
+import Iframe from './Iframe'
 
 const ConcertsContainer = (props) => {
   return (
@@ -14,7 +14,7 @@ const ConcertsContainer = (props) => {
         <MapContainer/>
       </div>
       <div style={{float: "left", margin: "15px"}}>
-        {props.clicked ? <Concert concert={props.clicked}/> : null}
+        {props.clicked ? <Concert concert={props.clicked}><Iframe concert={props.clicked}/></Concert> : null}
       </div>
     </div>
   )

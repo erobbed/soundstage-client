@@ -8,14 +8,24 @@ import ConcertsContainer from './components/ConcertsContainer'
 import ArtistsContainer from './components/ArtistsContainer'
 import isAuthenticated from './components/hocs/AuthWrapper'
 import AuthHandler from './auth/AuthHandler'
+import { currentUser } from './actions/authActions'
 import 'semantic-ui-css/semantic.min.css';
 import { withRouter } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
 
 const AuthedHome = isAuthenticated(Home)
 const AuthedArtists = isAuthenticated(ArtistsContainer)
 const AuthedConcerts = isAuthenticated(ConcertsContainer)
 
 class App extends Component {
+
+  componentWillMount(){
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      return this.props.currentUser(jwt)
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -37,4 +47,8 @@ function mapStateToProps(state){
   return {loggedIn: state.auth.loggedIn, loading: state.auth.loading}
 }
 
-export default withRouter(connect(mapStateToProps)(App));
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({currentUser}, dispatch)
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

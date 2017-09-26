@@ -39,3 +39,27 @@ export function logOut(){
     }
   }
 }
+
+export function currentUser(jwt){
+  const body = {
+    headers: {
+      "Authorization":`Bearer ${jwt}`,
+      "Content-Type":"application/json",
+      "Accept":"application/json"
+    }
+  }
+  return (dispatch) => {
+    return fetch('http://localhost:3000/api/v1/me', body)
+      .then(res => res.json())
+        .then(res => {
+          console.log("found user!")
+          dispatch({type: "LOG_IN", payload: {
+              user: res.user,
+              jwt: jwt,
+              artists: res.user.artists
+            }
+          })
+        }
+      )
+  }
+}

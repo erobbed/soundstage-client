@@ -21,5 +21,3 @@ export default function isAuthenticated(WrappedComponent){
     )
   }
 }
-
-// {props.loading ? <img src="/Radio.svg"/> : null }
