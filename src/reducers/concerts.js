@@ -5,7 +5,6 @@ function concertsReducer(state={list: [], clickedArtist: null, clicked: ""}, act
         list: action.payload.concerts, clickedArtist: action.payload.artist
       })
     case "VIEW_CONCERT":
-      console.log(action.payload)
       return Object.assign({}, state, {clicked: action.payload})
     default:
       return state

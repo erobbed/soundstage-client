@@ -8,7 +8,8 @@ import { bindActionCreators } from 'redux';
 
 class Artist extends React.Component{
   handleClick = () => {
-    this.props.getConcerts(this.props.artist)
+    this.props.getConcerts(this.props.artist.name)
+    localStorage.setItem('artist', this.props.artist.name)
     this.props.history.replace(`/artists/${this.props.artist.name}/concerts`)
   }
 

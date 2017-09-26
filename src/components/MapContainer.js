@@ -22,7 +22,6 @@ export class MapContainer extends React.Component {
       activeMarker: marker,
       showingInfoWindow: true
     }, () => {
-      console.log(this.state.selectedPlace)
       this.props.view(this.state.selectedPlace.concert)
     })
   }

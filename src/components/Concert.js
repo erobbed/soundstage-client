@@ -3,8 +3,7 @@ import { Card, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { addConcert, removeConcert } from '../actions/userActions';
 import { bindActionCreators } from 'redux';
-import Img from 'react-image'
-// import { bindActionCreators } from 'redux';
+import Img from 'react-image';
 
 
 class Concert extends React.Component{
