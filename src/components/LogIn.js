@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 
 const LogIn = (props) => {
   if (localStorage.getItem('jwt')) {
-    console.log("Redirecting to home because I've got a token");
     return <Redirect to='/' />
   }
   return (

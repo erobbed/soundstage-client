@@ -1,5 +1,4 @@
 export function authorize(code){
-  console.log("fetching user from back-end");
   const body = {
     method: 'POST',
     headers: {
@@ -15,13 +14,15 @@ export function authorize(code){
     geo.getCurrentPosition((position) => dispatch({type: "SET_LOCATION", payload: position}) )
     return fetch(`http://localhost:3000/api/v1/users?code=${code}`, body)
     .then(res => res.json())
-      .then(res => {
-        console.log("fetched, now logging in");
-        dispatch({type: 'LOG_IN', payload: {
-            user: res.user,
-            jwt: res.jwt,
-            artists: res.user.artists
-          }
+    .then(res => {
+      dispatch({
+        type: 'LOG_IN',
+        payload: {
+          user: res.user,
+          jwt: res.jwt,
+          artists: res.user.artists,
+          id: res.user.id
+        }
       })
     })
   }
@@ -50,16 +51,15 @@ export function currentUser(jwt){
   }
   return (dispatch) => {
     return fetch('http://localhost:3000/api/v1/me', body)
-      .then(res => res.json())
-        .then(res => {
-          console.log("found user!")
-          dispatch({type: "LOG_IN", payload: {
-              user: res.user,
-              jwt: jwt,
-              artists: res.user.artists
-            }
-          })
+    .then(res => res.json())
+    .then(res => {
+        dispatch({type: "LOG_IN", payload: {
+          user: res.user,
+          jwt: jwt,
+          artists: res.user.artists,
+          id: res.user.id
         }
-      )
+      })
+    })
   }
 }
