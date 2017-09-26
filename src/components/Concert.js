@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
+import { Card, Button, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { addConcert, removeConcert } from '../actions/userActions';
 import { bindActionCreators } from 'redux';
@@ -23,20 +23,22 @@ class Concert extends React.Component{
   render(){
     const concertIds = this.props.list.map(concert => concert.id)
     return (
-      <Card className="concert">
-        <Img src={[this.props.concert.seatmap, '/default.png']} className="image concert" alt="img"/>
-        <Card.Content className="concert">
-          <Card.Header>
-            {this.props.concert.venue}
-          </Card.Header>
-          <Card.Meta>
-            {this.props.concert.date} at {this.props.concert.time}
-          </Card.Meta>
-          <a href={this.props.concert.purchase}>Purchase</a><br/>
-        </Card.Content>
-        {concertIds.includes(this.props.concert.id) ? <Button onClick={this.handleRemove}>Remove from to My Concerts</Button> : <Button onClick={this.handleAdd}>Add to My Concerts</Button>}
+      <Grid.Column>
+        <Card className="concert">
+          <Img src={[this.props.concert.seatmap, '/default.png']} className="image concert" alt="img"/>
+          <Card.Content className="concert">
+            <Card.Header>
+              {this.props.concert.venue}
+            </Card.Header>
+            <Card.Meta>
+              {this.props.concert.date} at {this.props.concert.time}
+            </Card.Meta><br/>
+            <a href={this.props.concert.purchase} className="purchase">Buy Tix</a><br/>
+          </Card.Content>
+          {concertIds.includes(this.props.concert.id) ? <Button color='red' onClick={this.handleRemove}>Remove from to My Concerts</Button> : <Button color='violet' onClick={this.handleAdd}>Add to My Concerts</Button>}
+        </Card>
+      </Grid.Column>
 
-      </Card>
     )
   }
 }

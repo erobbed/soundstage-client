@@ -42,7 +42,8 @@ export class MapContainer extends React.Component {
   }
 
   render() {
-    const concerts = this.props.concerts.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.venue}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} />)
+    const upcoming = this.props.concerts.filter((concert, index) => new Date(concert.date) >= Date.now() )
+    const concerts = upcoming.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.venue}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} />)
     const base = this.props.latlong ? {lat: this.props.latlong.coords.latitude, lng: this.props.latlong.coords.longitude} : {lat: 40.7128, lng: -74.0061}
 
     return (

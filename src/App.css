@@ -35,6 +35,10 @@ iframe{
   border: none;
 }
 
+a.purchase{
+  color: white;
+}
+
 .ui.massive.loader.radio:before{
   border: none;
   background-image: url('/Radio.svg');
@@ -145,7 +149,7 @@ div.top{
   -webkit-transform: none;
 }
 
-.ui.card>.content.concert{
+.ui.card>.content.concert, .ui.cards>.card>.content.concert{
   background: rgb(30,214,96);
   font-family: 'Montserrat', sans-serif;
 }
@@ -156,6 +160,15 @@ div.top{
 
 .ui.secondary.inverted.pointing.menu.main-nav{
   border-color: transparent
+}
+
+.ui.centered.grid, .ui.centered.grid>.row, .ui.grid>.centered.row{
+  margin: 0 auto;
+  width: 95%
+}
+
+.ui.card.concert:last-child{
+  margin-bottom: 2rem;
 }
 
 .ui.button.login{
