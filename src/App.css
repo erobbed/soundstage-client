@@ -15,21 +15,8 @@
   left: 43%;
 }
 
-iframe{
-  height: 675px;
-  width: 500px;
-
-    -ms-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
-
-    -ms-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
+div.player>h2{
+  text-align: center;
 }
 
 .ui.massive.loader.radio:after{
@@ -95,6 +82,21 @@ a.purchase{
   border: solid;
   border-width: 2px;
   border-color: rgb(30,214,96);
+}
+
+div.player{
+  margin-top: 1em;
+  float: left;
+  width: 30%;
+  height: 25%;
+}
+
+iframe{
+  height: 22vw;
+  width: 565px;
+  max-width: 100%;
+  transform-origin: 50% 50% 0;
+  -webkit-transform-origin: 50% 50% 0;
 }
 
 img#home{

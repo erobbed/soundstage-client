@@ -1,9 +1,10 @@
 import React from 'react';
 import MapContainer from '../assets/MapContainer';
 import { connect } from 'react-redux';
-import { getConcerts } from '../../actions/concertActions';
+import { getConcerts, loadVideo } from '../../actions/concertActions';
 import { userConcerts } from '../../actions/userActions';
 import { bindActionCreators } from 'redux';
+import  YouTube from 'react-youtube'
 import Concert from './Concert';
 
 class ConcertsContainer extends React.Component{
@@ -13,9 +14,11 @@ class ConcertsContainer extends React.Component{
     const jwt = localStorage.getItem('jwt')
     this.props.getConcerts(artist)
     this.props.userConcerts(jwt)
+    this.props.loadVideo(artist)
   }
 
   render(){
+
     return (
       <div>
         <div className="top">
@@ -27,17 +30,22 @@ class ConcertsContainer extends React.Component{
         <div style={{float: "left", margin: "15px"}}>
           {this.props.clicked ? <Concert concert={this.props.clicked}></Concert> : null}
         </div>
+        <div className="player">
+          <h2>Wilco Live Videos</h2>
+          {this.props.loadVideo === "" ? null : <YouTube videoId={this.props.videoId}/>}
+        </div>
       </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({getConcerts, userConcerts}, dispatch)
+  return bindActionCreators({getConcerts, userConcerts, loadVideo }, dispatch)
 }
 
 function mapStateToProps(state){
-  return {artist: state.concerts.clickedArtist, clicked: state.concerts.clicked}
+  return {artist: state.concerts.clickedArtist, clicked: state.concerts.clicked, videoId: state.concerts.videoId}
 }
 
+/* <iframe src={`https://www.youtube.com/embed${this.props.videoId}`} allowfullscreen/> */
 export default connect(mapStateToProps, mapDispatchToProps)(ConcertsContainer)
