@@ -96,7 +96,12 @@ a.purchase{
   border-color: rgb(30,214,96);
 }
 
-h1#title, h5#title{
+h1#title{
+  color: white;
+  font-size: 3em;
+}
+
+h5#title{
   color: white;
   font-size: 1em;
 }
@@ -110,7 +115,7 @@ div.top{
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: rgb(40,40,40);
-  padding-top: 20px;
+  padding-top: 10px;
   margin: 0 auto;
   width: 95%;
 }
