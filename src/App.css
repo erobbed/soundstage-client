@@ -83,7 +83,10 @@ a.purchase{
   border-radius: 500rem !important;
   border: solid;
   border-width: 2px;
-  border-color: transparent
+  border-color: transparent;
+  height: 300px;
+  width: 300px;
+  padding: 10px;
 }
 
 .ui.card>:first-child, .ui.cards>.card>:first-child.artist:hover{
@@ -93,9 +96,9 @@ a.purchase{
   border-color: rgb(30,214,96);
 }
 
-h1#title{
+h1#title, h5#title{
   color: white;
-  font-size: 3em;
+  font-size: 1em;
 }
 
 h2{

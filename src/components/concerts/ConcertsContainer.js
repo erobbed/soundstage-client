@@ -1,11 +1,10 @@
 import React from 'react';
-import MapContainer from './MapContainer';
+import MapContainer from '../assets/MapContainer';
 import { connect } from 'react-redux';
-import { getConcerts } from '../actions/concertActions';
-import { userConcerts } from '../actions/userActions';
+import { getConcerts } from '../../actions/concertActions';
+import { userConcerts } from '../../actions/userActions';
 import { bindActionCreators } from 'redux';
 import Concert from './Concert';
-import Iframe from './Iframe';
 
 class ConcertsContainer extends React.Component{
 
@@ -26,7 +25,7 @@ class ConcertsContainer extends React.Component{
           <MapContainer/>
         </div>
         <div style={{float: "left", margin: "15px"}}>
-          {this.props.clicked ? <Concert concert={this.props.clicked}><Iframe concert={this.props.clicked}/></Concert> : null}
+          {this.props.clicked ? <Concert concert={this.props.clicked}></Concert> : null}
         </div>
       </div>
     )

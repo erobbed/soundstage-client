@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
-import { getConcerts } from '../actions/concertActions';
+import { getConcerts } from '../../actions/concertActions';
 import { connect } from 'react-redux';
 import {withRouter } from 'react-router'
 import { bindActionCreators } from 'redux';

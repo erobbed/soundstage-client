@@ -6,9 +6,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import usersReducer from './reducers/users';
-import artistsReducer from './reducers/artists';
-import concertsReducer from './reducers/concerts';
+import usersReducer from './reducers/usersReducer';
+import artistsReducer from './reducers/artistsReducer';
+import concertsReducer from './reducers/concertsReducer';
 import authReducer from './reducers/authReducer'
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';

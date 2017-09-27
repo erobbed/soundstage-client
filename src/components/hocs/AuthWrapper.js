@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import NavBar from '../NavBar';
+import NavBar from '../assets/NavBar';
 import { Dimmer, Loader } from 'semantic-ui-react'
 
 export default function isAuthenticated(WrappedComponent){

@@ -2,7 +2,7 @@ import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { view } from '../actions/concertActions'
+import { view } from '../../actions/concertActions'
 
 export class MapContainer extends React.Component {
 

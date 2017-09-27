@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { addConcert, removeConcert } from '../actions/userActions';
+import { addConcert, removeConcert } from '../../actions/userActions';
 import { bindActionCreators } from 'redux';
 import Img from 'react-image';
 

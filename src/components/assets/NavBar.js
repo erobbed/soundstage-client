@@ -1,7 +1,7 @@
 import React from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
-import { logOut} from '../actions/authActions'
+import { logOut} from '../../actions/authActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Button, Image } from 'semantic-ui-react'

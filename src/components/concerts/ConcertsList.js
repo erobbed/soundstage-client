@@ -3,7 +3,7 @@ import Concert from './Concert';
 import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { userConcerts } from '../actions/userActions'
+import { userConcerts } from '../../actions/userActions'
 // import Masonry from 'react-masonry-component';
 
 class ConcertsList extends React.Component{
@@ -27,7 +27,7 @@ class ConcertsList extends React.Component{
         </div>
           <Grid centered columns={4}>
             <Grid.Row>
-              {upcomingConcerts === [].length ? <h1>Sorry You Currently Have No Upcoming Concerts</h1> : upcomingConcerts}
+              {upcomingConcerts.length === [].length ? <h5 id="title">Sorry You Currently Have No Upcoming Concerts...</h5> : upcomingConcerts}
             </Grid.Row>
           </Grid>
           <div className="top">
@@ -35,7 +35,7 @@ class ConcertsList extends React.Component{
           </div>
           <Grid centered columns={4}>
             <Grid.Row>
-              {pastConcerts === [].length ? <h1>Sorry You Currently Have No Past Concerts to Show</h1> : pastConcerts}
+              {pastConcerts.length === [].length ? <h5 id="title">Sorry You Have No Past Concerts...</h5> : pastConcerts}
             </Grid.Row>
           </Grid>
       </div>
