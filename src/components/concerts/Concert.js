@@ -31,6 +31,7 @@ class Concert extends React.Component{
               {this.props.concert.venue}
             </Card.Header>
             <Card.Meta>
+              {`${this.props.concert.city}, ${this.props.concert.state}`}<br/>
               {this.props.concert.date} at {this.props.concert.time}
             </Card.Meta><br/>
             <a href={this.props.concert.purchase} className="purchase">Buy Tix</a><br/>

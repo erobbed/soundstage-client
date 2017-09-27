@@ -80,7 +80,7 @@ a.purchase{
   box-shadow: 0 0 0 2px #FFF inset!important;
 }
 
-.ui.card>:first-child, .ui.cards>.card>:first-child.artist{
+.ui.cards>.card>:first-child.artist{
   border-radius: 500rem !important;
   border: solid;
   border-width: 2px;
@@ -90,7 +90,7 @@ a.purchase{
   padding: 10px;
 }
 
-.ui.card>:first-child, .ui.cards>.card>:first-child.artist:hover{
+.ui.cards>.card>:first-child.artist:hover{
   border-radius: 500rem !important;
   border: solid;
   border-width: 2px;

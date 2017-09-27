@@ -35,12 +35,6 @@ export class MapContainer extends React.Component {
     }
   }
 
-
-  handleInfoClick = () => {
-    console.log("Clicking")
-    //
-  }
-
   render() {
     const upcoming = this.props.concerts.filter((concert, index) => new Date(concert.date) >= Date.now() )
     const concerts = upcoming.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.venue}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} />)
@@ -49,13 +43,12 @@ export class MapContainer extends React.Component {
     return (
       <Map clickableIcons={true} onClick={this.onInfoWindowClose} google={this.props.google} zoom={3} initialCenter={base}>
 
-        <Marker onClick={this.onMarkerClick}
-                name={'Current Location'} />
+        <Marker onClick={this.onMarkerClick} name={'Current Location'}  icon={{url: '/home.png'}}/>
 
         {concerts}
 
         <InfoWindow onClose={this.onInfoWindowClose} marker={this.state.activeMarker} visible={this.state.showingInfoWindow}>
-            <div onClick={this.handleInfoClick}>
+            <div>
               <h3>{this.state.selectedPlace.name}</h3>
             </div>
         </InfoWindow>
