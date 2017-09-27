@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Frijole');
 
 
 *{
@@ -96,9 +97,17 @@ a.purchase{
   border-color: rgb(30,214,96);
 }
 
+img#home{
+  margin-top: 50px;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(30,214,96);
+}
+
 h1#title{
   color: white;
   font-size: 3em;
+  font-family: 'Frijole', cursive;
 }
 
 h5#title{
