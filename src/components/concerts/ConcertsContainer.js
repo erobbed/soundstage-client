@@ -18,11 +18,12 @@ class ConcertsContainer extends React.Component{
   }
 
   render(){
-
+    const header = this.props.concerts.length === 0 ? `Sorry! ${this.props.artist} has no Upcoming Concerts listed!` : `Concerts by ${this.props.artist}`
     return (
       <div>
         <div className="top">
-          <h2>{this.props.artist ? `Concerts by ${this.props.artist}` : null}</h2>
+          <h2>{this.props.artist ? header : null}</h2>
+
         </div>
         <div style={{height: "500px", width: "500px", position: "relative", float: "left", margin: "1em", marginLeft: "2.5%"}}>
           <MapContainer/>
@@ -31,7 +32,7 @@ class ConcertsContainer extends React.Component{
           {this.props.clicked ? <Concert concert={this.props.clicked}></Concert> : null}
         </div>
         <div className="player">
-          <h2>Wilco Live Videos</h2>
+          <h2>{`${this.props.artist} Live Videos`}</h2>
           {this.props.loadVideo === "" ? null : <YouTube videoId={this.props.videoId}/>}
         </div>
       </div>
@@ -40,11 +41,11 @@ class ConcertsContainer extends React.Component{
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({getConcerts, userConcerts, loadVideo }, dispatch)
+  return bindActionCreators({ getConcerts, userConcerts, loadVideo }, dispatch)
 }
 
 function mapStateToProps(state){
-  return {artist: state.concerts.clickedArtist, clicked: state.concerts.clicked, videoId: state.concerts.videoId}
+  return {artist: state.concerts.clickedArtist, clicked: state.concerts.clicked, videoId: state.concerts.videoId, concerts: state.concerts.list}
 }
 
 /* <iframe src={`https://www.youtube.com/embed${this.props.videoId}`} allowfullscreen/> */
