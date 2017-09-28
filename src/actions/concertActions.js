@@ -20,6 +20,12 @@ export function view(clicked){
   }
 }
 
+export function reset(){
+  return {
+    type: "CLEAR_CONCERT",
+  }
+}
+
 export function loadVideo(artist){
   return (dispatch) => {
     const apikey = "AIzaSyDztpz0QZxu3ciLy2RL7Y2ezCCkvyHFy7c"

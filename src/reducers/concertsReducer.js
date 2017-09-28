@@ -6,6 +6,8 @@ function concertsReducer(state={list: [], clickedArtist: null, clicked: "", vide
       })
     case "VIEW_CONCERT":
       return Object.assign({}, state, {clicked: action.payload})
+    case "CLEAR_CONCERT":
+      return Object.assign({}, state, {clicked: ""})
     case "LOAD_VIDEO":
       return Object.assign({}, state, {videoId: action.payload})
     default:

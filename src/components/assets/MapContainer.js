@@ -2,7 +2,7 @@ import React from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { view } from '../../actions/concertActions'
+import { view, reset } from '../../actions/concertActions'
 
 export class MapContainer extends React.Component {
 
@@ -31,6 +31,8 @@ export class MapContainer extends React.Component {
       this.setState({
         showingInfoWindow: false,
         activeMarker: null
+      }, () => {
+        this.props.reset(this.state.selectedPlace.concert)
       })
     }
   }
@@ -62,7 +64,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({view}, dispatch)
+  return bindActionCreators({view, reset}, dispatch)
 }
 
 
