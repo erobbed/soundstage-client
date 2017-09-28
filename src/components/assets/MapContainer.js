@@ -16,6 +16,10 @@ export class MapContainer extends React.Component {
     }
   }
 
+  componentDidMount(){
+    this.props.reset()
+  }
+
   onMarkerClick = (props, marker, event) => {
     this.setState({
       selectedPlace: props,
@@ -32,7 +36,7 @@ export class MapContainer extends React.Component {
         showingInfoWindow: false,
         activeMarker: null
       }, () => {
-        this.props.reset(this.state.selectedPlace.concert)
+        this.props.reset()
       })
     }
   }
