@@ -25,6 +25,7 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} to="/" exact name="Home" active={activeItem === 'Home'} onClick={this.handleItemClick} key="home" />
         <Menu.Item as={NavLink} to="/artists" exact name="My Artists" active={activeItem === 'My Artists'} onClick={this.handleItemClick} key="artists" />
         <Menu.Item as={NavLink} to="/concerts" exact name="My Concerts" active={activeItem === 'My Concerts'} onClick={this.handleItemClick} key="concerts" />
+        <Menu.Item as={NavLink} to="/explore" exact name="Explore" active={activeItem === 'Explore'} onClick={this.handleItemClick} key="explore" />
         <Menu.Menu position="right" key="right">
           <Menu.Item key="logout">
             <Button basic inverted secondary color="black" id="logout" onClick={this.handleLogout}>Log Out</Button>
