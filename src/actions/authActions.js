@@ -50,6 +50,8 @@ export function currentUser(jwt){
     }
   }
   return (dispatch) => {
+    const geo = navigator.geolocation
+    geo.getCurrentPosition((position) => dispatch({type: "SET_LOCATION", payload: position}) )
     return fetch('http://localhost:3000/api/v1/me', body)
     .then(res => res.json())
     .then(res => {

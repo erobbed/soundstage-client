@@ -55,8 +55,3 @@ export function removeConcert(jwt, concert, id){
     })
   )}
 }
-
-//add route on api to handle users/:user/concerts and controller method in concerts_controller: @user = User.find(current_user)
-// @concert = Concert.find(params['concert'].id)
-// @user.concerts << @concert
-//render json: {concerts: @user.concerts }

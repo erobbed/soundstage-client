@@ -8,7 +8,9 @@ import { bindActionCreators } from 'redux';
 class Explore extends React.Component{
 
   componentDidMount(){
-    this.props.loadConcerts()
+    if (this.props.latlong){
+      this.props.loadConcerts(this.props.latlong)
+    }
   }
 
   render(){
@@ -43,7 +45,7 @@ class Explore extends React.Component{
 }
 
 function mapStateToProps(state){
-  return {concerts: state.artists.concerts}
+  return {concerts: state.artists.concerts, latlong: state.users.latlong}
 }
 
 function mapDispatchToProps(dispatch){
