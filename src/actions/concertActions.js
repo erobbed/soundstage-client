@@ -50,3 +50,23 @@ export function allConcerts(jwt, id){
     .then(res => dispatch({type: 'ALL_CONCERTS', payload: res.concerts}))
   }
 }
+
+export function mapConcerts(position, jwt){
+  const req = {
+    method: 'POST',
+    headers: {
+      Authorization:`Bearer ${jwt}`,
+      lat: position.coords.latitude,
+      long: position.coords.longitude
+    }
+  }
+
+  return (dispatch) => {
+    return fetch('http://localhost:3000/api/v1/concerts', req)
+    .then(res => res.json())
+    .then(res => dispatch({
+      type: "MAP_CONCERTS",
+      payload: res.concerts
+    }))
+  }
+}

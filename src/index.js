@@ -7,14 +7,13 @@ import { combineReducers, applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import usersReducer from './reducers/usersReducer';
-import artistsReducer from './reducers/artistsReducer';
 import concertsReducer from './reducers/concertsReducer';
 import authReducer from './reducers/authReducer'
 import thunk from 'redux-thunk';
 import registerServiceWorker from './registerServiceWorker';
 
 
-const rootReducer = combineReducers({users: usersReducer, artists: artistsReducer, concerts: concertsReducer, auth: authReducer});
+const rootReducer = combineReducers({users: usersReducer, concerts: concertsReducer, auth: authReducer});
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))

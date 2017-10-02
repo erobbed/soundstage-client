@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-import { loadConcerts } from '../../actions/artistActions';
+import { mapConcerts } from '../../actions/concertActions';
 import ExplorerRow from './ExplorerRow'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,7 +10,7 @@ class Explore extends React.Component{
   componentDidMount(){
     const jwt = localStorage.getItem('jwt')
     if (this.props.latlong && jwt){
-      this.props.loadConcerts(this.props.latlong, jwt)
+      this.props.mapConcerts(this.props.latlong, jwt)
     }
   }
 
@@ -20,10 +20,9 @@ class Explore extends React.Component{
         <ExplorerRow key={index} concert={concert}/>
       )
     })
-
     return(
       <div style={{margin: '0 auto', overflow: 'auto'}}>
-        <Table columns={8} inverted striped mini style={{background: 'transparent', color: 'white'}} className="explore">
+        <Table columns={8} inverted striped style={{background: 'transparent', color: 'white'}} className="explore">
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Acts</Table.HeaderCell>
@@ -46,11 +45,11 @@ class Explore extends React.Component{
 }
 
 function mapStateToProps(state){
-  return {concerts: state.artists.concerts, latlong: state.users.latlong}
+  return {concerts: state.concerts.list, latlong: state.users.latlong}
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({loadConcerts}, dispatch)
+  return bindActionCreators({mapConcerts}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)
