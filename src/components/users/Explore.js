@@ -8,8 +8,9 @@ import { bindActionCreators } from 'redux';
 class Explore extends React.Component{
 
   componentDidMount(){
-    if (this.props.latlong){
-      this.props.loadConcerts(this.props.latlong)
+    const jwt = localStorage.getItem('jwt')
+    if (this.props.latlong && jwt){
+      this.props.loadConcerts(this.props.latlong, jwt)
     }
   }
 
@@ -21,18 +22,18 @@ class Explore extends React.Component{
     })
 
     return(
-      <div style={{maxWidth: '95%', margin: '0 auto'}}>
-        <Table style={{background: 'transparent', color: 'white'}}>
+      <div style={{margin: '0 auto', overflow: 'auto'}}>
+        <Table columns={8} inverted striped mini style={{background: 'transparent', color: 'white'}} className="explore">
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell style={{width: '200px'}}>Acts</Table.HeaderCell>
+              <Table.HeaderCell>Acts</Table.HeaderCell>
               <Table.HeaderCell>Date</Table.HeaderCell>
               <Table.HeaderCell>Time</Table.HeaderCell>
-              <Table.HeaderCell style={{width: '200px'}}>Venue</Table.HeaderCell>
+              <Table.HeaderCell>Venue</Table.HeaderCell>
               <Table.HeaderCell>City</Table.HeaderCell>
-              <Table.HeaderCell style={{width: '200px'}}>State</Table.HeaderCell>
-              <Table.HeaderCell style={{width: '100px'}}>Get Tix</Table.HeaderCell>
-              <Table.HeaderCell style={{width: '200px'}}>Status</Table.HeaderCell>
+              <Table.HeaderCell>State</Table.HeaderCell>
+              <Table.HeaderCell>Get Tix</Table.HeaderCell>
+              <Table.HeaderCell>Status</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>

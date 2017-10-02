@@ -34,7 +34,7 @@ class ExplorerRow extends React.Component{
         <Table.Cell>{this.props.concert.city}</Table.Cell>
         <Table.Cell>{this.props.concert.state}</Table.Cell>
         <Table.Cell><a href='{this.props.concert.purchase}' target="_blank">Buy</a></Table.Cell>
-        <Table.Cell>{concertIds.includes(this.props.concert.id) ? <Button color='red' onClick={this.handleRemove}>Remove from to My Concerts</Button> : <Button color='violet'  onClick={this.handleAdd}>Add to My Concerts</Button>}</Table.Cell>
+        <Table.Cell>{concertIds.includes(this.props.concert.id) ? <Button color='red' onClick={this.handleRemove}>Remove Concert</Button> : <Button color='violet'  onClick={this.handleAdd}>Add Concert</Button>}</Table.Cell>
       </Table.Row>
     )
   }

@@ -7,7 +7,6 @@ import Home from './components/assets/Home'
 import ConcertsContainer from './components/concerts/ConcertsContainer'
 import ArtistsContainer from './components/artists/ArtistsContainer'
 import ConcertsList from './components/concerts/ConcertsList'
-import Explore from './components/users/Explore'
 import isAuthenticated from './components/hocs/AuthWrapper'
 import AuthHandler from './auth/AuthHandler'
 import { currentUser } from './actions/authActions'
@@ -19,7 +18,6 @@ const AuthedHome = isAuthenticated(Home)
 const AuthedArtists = isAuthenticated(ArtistsContainer)
 const AuthedConcerts = isAuthenticated(ConcertsContainer)
 const AuthedList = isAuthenticated(ConcertsList)
-const AuthedExplore = isAuthenticated(Explore)
 
 class App extends Component {
 
@@ -39,7 +37,6 @@ class App extends Component {
             <Route exact path='/artists' component={AuthedArtists}/>
             <Route exact path='/artists/:artist/concerts' component={AuthedConcerts} />
             <Route exact path='/concerts' component={AuthedList}/>
-            <Route exact path='/explore' component={AuthedExplore} loading={this.props.loading}/>
             <Route exact path="/login" render={() => <LogIn loggedIn={this.props.loggedIn}/>}/>
             <Route exact path="/login/authorize" component={AuthHandler}/>
           </Switch>

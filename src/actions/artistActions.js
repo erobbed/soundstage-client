@@ -1,7 +1,8 @@
-export function loadConcerts(position){
+export function loadConcerts(position, jwt){
   const req = {
     method: 'POST',
     headers: {
+      Authorization:`Bearer ${jwt}`,
       lat: position.coords.latitude,
       long: position.coords.longitude
     }

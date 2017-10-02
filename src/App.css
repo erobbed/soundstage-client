@@ -55,6 +55,16 @@ a.purchase{
   to { transform: rotate(360deg); }
 }
 
+div.home{
+  height: 400px;
+  width: 800px;
+  position: relative;
+  border: solid;
+  overflow: auto;
+  margin: 20px auto;
+  border-color: rgb(30,214,96);
+}
+
 .ui.inverted.segment{
   padding-top: 0;
 }
@@ -75,6 +85,10 @@ a.purchase{
   height: 300px;
   width: 300px;
   padding: 10px;
+}
+
+.ui.table.explore{
+  font-size: 12px;
 }
 
 .ui.cards>.card>:first-child.artist:hover{

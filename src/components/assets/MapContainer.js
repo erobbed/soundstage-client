@@ -47,7 +47,7 @@ export class MapContainer extends React.Component {
     const base = this.props.latlong ? {lat: this.props.latlong.coords.latitude, lng: this.props.latlong.coords.longitude} : {lat: 40.7128, lng: -74.0061}
 
     return (
-      <Map clickableIcons={true} onClick={this.onInfoWindowClose} google={this.props.google} zoom={3} initialCenter={base}>
+      <Map clickableIcons={true} onClick={this.onInfoWindowClose} google={this.props.google} zoom={4} initialCenter={base}>
 
         <Marker onClick={this.onMarkerClick} name={'Current Location'}  icon={{url: '/home.png'}}/>
 

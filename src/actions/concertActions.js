@@ -34,3 +34,19 @@ export function loadVideo(artist){
     .then(res => dispatch({type: "LOAD_VIDEO", payload: res.items[0].id.videoId}))
   }
 }
+
+export function allConcerts(jwt, id){
+  const body = {
+    method: 'GET',
+    headers: {
+      "Authorization":`Bearer ${jwt}`,
+      "Content-Type":"application/json",
+      "Accept":"application/json"
+    }
+  }
+  return (dispatch) => {
+    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/all`, body)
+    .then(res => res.json())
+    .then(res => dispatch({type: 'ALL_CONCERTS', payload: res.concerts}))
+  }
+}
