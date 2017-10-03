@@ -25,10 +25,10 @@ class Concert extends React.Component{
     return (
       <Grid.Column>
         <Card className="concert">
-          <Img src={[this.props.concert.seatmap, '/default.png']} className="image concert" alt="img"/>
+          <Img src={[this.props.concert.seatmap, '/show.jpg']} className="image concert" alt="img"/>
           <Card.Content className="concert">
             <Card.Header>
-              {this.props.concert.venue}
+              {`${this.props.concert.name} @ ${this.props.concert.venue}`}
             </Card.Header>
             <Card.Meta>
               {`${this.props.concert.city}, ${this.props.concert.state}`}<br/>

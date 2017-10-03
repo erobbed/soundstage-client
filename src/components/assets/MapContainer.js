@@ -44,13 +44,13 @@ export class MapContainer extends React.Component {
   render() {
     console.log(this.props.latlong);
     const upcoming = this.props.concerts.filter((concert, index) => new Date(concert.date) >= Date.now() )
-    const concerts = upcoming.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.name}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} />)
+    const concerts = upcoming.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.name}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} icon={{url: '/concert.svg'}} />)
     const base = this.props.latlong ? {lat: this.props.latlong.coords.latitude, lng: this.props.latlong.coords.longitude} : {lat: 40.7128, lng: -74.0061}
 
     return (
       <Map clickableIcons={true} onClick={this.onInfoWindowClose} google={this.props.google} zoom={4} initialCenter={base}>
 
-        <Marker onClick={this.onMarkerClick} name={'Current Location'}  icon={{url: '/home.png'}}/>
+        <Marker onClick={this.onMarkerClick} name={'Current Location'}  icon={{url: '/home.svg'}}/>
 
         {concerts}
 

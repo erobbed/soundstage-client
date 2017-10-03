@@ -137,6 +137,10 @@ h2{
   text-align: left;
 }
 
+h2#login{
+  text-align: center;
+}
+
 div.top{
   border-bottom-style: solid;
   border-bottom-width: 2px;
@@ -219,6 +223,16 @@ div.top{
   border-color: white;
   border-width: .25px;
   border-style: solid
+}
+
+.ui.buttons:not(.basic):not(.inverted)>.button{
+  border: solid;
+  border-width: 2px;
+  border-color: grey
+}
+
+.ui.buttons:not(.basic):not(.inverted)>.button.active{
+  border-color: rgb(30,214,96)
 }
 
 body.body{

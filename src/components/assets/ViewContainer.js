@@ -28,9 +28,9 @@ class ViewContainer extends React.Component{
     return(
       <div>
         <Button.Group size='large'>
-          <Button onClick={this.handleClick} active={this.state.button === "Table"} name="Table">View as Table</Button>
+          <Button color="black" onClick={this.handleClick} active={this.state.button === "Table"} name="Table" content='View as Table' labelPosition='left' icon='list layout'/>
           <Button.Or />
-          <Button onClick={this.handleClick} active={this.state.button === "Map"} name="Map">View as Map</Button>
+          <Button color="black" onClick={this.handleClick} active={this.state.button === "Map"} name="Map" content='View as Map' labelPosition='right' icon='globe'/>
         </Button.Group>
         <div className="home">
           {this.state.button === "Table" ? <Explore/> : <MapContainer/>}
