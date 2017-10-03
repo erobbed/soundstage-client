@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Button } from 'semantic-ui-react';
+import { Table, Button, Icon } from 'semantic-ui-react';
 import { addConcert, removeConcert, userConcerts } from '../../actions/userActions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -33,8 +33,8 @@ class ExplorerRow extends React.Component{
         <Table.Cell>{this.props.concert.venue}</Table.Cell>
         <Table.Cell>{this.props.concert.city}</Table.Cell>
         <Table.Cell>{this.props.concert.state}</Table.Cell>
-        <Table.Cell><a href='{this.props.concert.purchase}' target="_blank">Buy</a></Table.Cell>
-        <Table.Cell>{concertIds.includes(this.props.concert.id) ? <Button color='red' onClick={this.handleRemove}>Remove Concert</Button> : <Button color='violet'  onClick={this.handleAdd}>Add Concert</Button>}</Table.Cell>
+        <Table.Cell><a href='{this.props.concert.purchase}' target="_blank">Buy <Icon name='ticket' size='large'/></a></Table.Cell>
+        <Table.Cell>{concertIds.includes(this.props.concert.id) ? <Button color='red' size='small' onClick={this.handleRemove}>Remove Concert</Button> : <Button color='violet' size='small' onClick={this.handleAdd}>Add Concert</Button>}</Table.Cell>
       </Table.Row>
     )
   }

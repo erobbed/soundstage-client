@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Grid } from 'semantic-ui-react';
+import { Card, Button, Grid, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { addConcert, removeConcert } from '../../actions/userActions';
 import { bindActionCreators } from 'redux';
@@ -34,7 +34,7 @@ class Concert extends React.Component{
               {`${this.props.concert.city}, ${this.props.concert.state}`}<br/>
               {this.props.concert.date} at {this.props.concert.time}
             </Card.Meta><br/>
-            <a href={this.props.concert.purchase} className="purchase" target="_blank">Buy Tix</a><br/>
+            <a href={this.props.concert.purchase} className="purchase" target="_blank">Buy Tix <Icon name='ticket'/></a><br/>
           </Card.Content>
           {concertIds.includes(this.props.concert.id) ? <Button color='red' onClick={this.handleRemove}>Remove from to My Concerts</Button> : <Button color='violet' onClick={this.handleAdd}>Add to My Concerts</Button>}
         </Card>

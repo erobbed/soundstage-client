@@ -4,6 +4,7 @@ import NavBar from '../assets/NavBar';
 import { Dimmer, Loader } from 'semantic-ui-react'
 
 export default function isAuthenticated(WrappedComponent){
+
   return function (props) {
     if (!localStorage.getItem('jwt') && !props.loading) {
       console.log("Redirecting back to login because I don't have a token...");

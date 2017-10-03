@@ -190,6 +190,7 @@ div.top{
 .ui.card>.content.concert, .ui.cards>.card>.content.concert{
   background: rgb(30,214,96);
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .ui.inverted.segment.nav, .ui.primary.inverted.segment.nav{
@@ -213,15 +214,15 @@ div.top{
   background: rgb(30,214,96);
   color: black;
   border-color: rgb(30,214,96);
-  border-width: .25px;
+  border-width: .5px;
   border-style: solid
 }
 
 .ui.button.login:hover{
-  background: rgb(70,70,70);
+  background: rgb(60,60,60);
   color: white;
   border-color: white;
-  border-width: .25px;
+  border-width: .5px;
   border-style: solid
 }
 
