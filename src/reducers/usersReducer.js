@@ -1,4 +1,4 @@
-function usersReducer(state = {location: '', userConcerts: []}, action){
+function usersReducer(state = {latlong: '', userConcerts: []}, action){
   switch (action.type) {
     case "SET_LOCATION":
       return Object.assign({}, state, {latlong: action.payload})

@@ -1,19 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { allConcerts } from '../../actions/concertActions';
 import ViewContainer from '../assets/ViewContainer';
 
 
 class Home extends React.Component{
-
-  componentDidMount(){
-    const jwt = localStorage.getItem('jwt')
-    const id = localStorage.getItem('id')
-    if (jwt && id) {
-      this.props.allConcerts(jwt, id)
-    }
-  }
 
   render(){
     return (
@@ -23,18 +13,14 @@ class Home extends React.Component{
           <h2>My Artists This Week</h2>
         </div>
         <br/>
-        {this.props.loading && this.props.concerts.length === 0 ? null : <ViewContainer/>}
+        {this.props.loading && (this.props.concerts.length === 0) && !!this.props.latlong ? null : <ViewContainer/>}
       </div>
     )
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({allConcerts}, dispatch)
-}
-
 function mapStateToProps(state) {
-  return {concerts: state.concerts.list, loading: state.auth.loading}
+  return {concerts: state.concerts.list, clicked: state.concerts.clicked, loading: state.auth.loading, latlong: state.users.latlong}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps)(Home)

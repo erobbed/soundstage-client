@@ -78,13 +78,14 @@ div.home{
 }
 
 .ui.cards>.card>:first-child.artist{
-  border-radius: 500rem !important;
+  border-radius: 50% !important;
   border: solid;
   border-width: 2px;
   border-color: transparent;
   height: 300px;
   width: 300px;
-  padding: 10px;
+  padding: 5px;
+  object-fit: cover;
 }
 
 .ui.table.explore{
@@ -92,7 +93,7 @@ div.home{
 }
 
 .ui.cards>.card>:first-child.artist:hover{
-  border-radius: 500rem !important;
+  border-radius: 50% !important;
   border: solid;
   border-width: 2px;
   border-color: rgb(30,214,96);

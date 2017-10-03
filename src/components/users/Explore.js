@@ -1,18 +1,9 @@
 import React from 'react';
 import { Table } from 'semantic-ui-react';
-import { mapConcerts } from '../../actions/concertActions';
 import ExplorerRow from './ExplorerRow'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class Explore extends React.Component{
-
-  componentDidMount(){
-    const jwt = localStorage.getItem('jwt')
-    if (this.props.latlong && jwt){
-      this.props.mapConcerts(this.props.latlong, jwt)
-    }
-  }
 
   render(){
     const concerts = this.props.concerts.map((concert, index) => {
@@ -48,8 +39,4 @@ function mapStateToProps(state){
   return {concerts: state.concerts.list, latlong: state.users.latlong}
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({mapConcerts}, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Explore)
+export default connect(mapStateToProps)(Explore)
