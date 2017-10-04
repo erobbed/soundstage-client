@@ -7,7 +7,7 @@ const LogIn = (props) => {
     return <Redirect to='/' />
   }
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexWrap: 'wrap', verticalAlign: 'middle'}}>
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '75vh', flexWrap: 'wrap', verticalAlign: 'middle'}}>
       <div>
         <h2 id="login">Want to know where your favorite artist is playing next?</h2>
         <h1 id="title">SoundStage</h1>
