@@ -12,12 +12,17 @@ export class MapContainer extends React.Component {
     this.state={
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {}
+      selectedPlace: {},
+      latlong: this.props.latlong
     }
   }
 
   componentDidMount(){
     this.props.reset()
+  }
+
+  componentWillRecieveProps(nextProps){
+    this.setState({latlong: nextProps.latlong})
   }
 
   onMarkerClick = (props, marker, event) => {
@@ -44,7 +49,7 @@ export class MapContainer extends React.Component {
   render() {
     const upcoming = this.props.concerts.filter((concert, index) => new Date(concert.date) >= Date.now() )
     const concerts = upcoming.map((concert, index) => <Marker key={index} concert={concert} name={`${concert.name}:\n ${concert.date} at ${concert.time}`} onClick={this.onMarkerClick} position={{lat: concert.lat, lng: concert.long}} icon={{url: '/concert.svg'}} />)
-    const base = this.props.latlong ? {lat: this.props.latlong.coords.latitude, lng: this.props.latlong.coords.longitude} : {lat: 40.7128, lng: -74.0061}
+    const base = this.state.latlong ? {lat: this.state.latlong.coords.latitude, lng: this.state.latlong.coords.longitude} : {lat: 40.7128, lng: -74.0061}
 
     return (
       <Map clickableIcons={true} onClick={this.onInfoWindowClose} google={this.props.google} zoom={4} initialCenter={base}>
