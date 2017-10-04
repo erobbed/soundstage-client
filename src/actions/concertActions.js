@@ -1,7 +1,7 @@
 export function getConcerts(artist){
 
   return(dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/concerts/${artist}`)
+    return fetch(`https://soundstage-api.herokuapp.com/api/v1/concerts/${artist}`)
     .then(res => res.json())
     .then(res => dispatch({
       type: 'GET_CONCERTS',
@@ -46,7 +46,7 @@ export function mapConcerts(position, jwt){
   }
 
   return (dispatch) => {
-    return fetch('http://localhost:3000/api/v1/concerts', req)
+    return fetch('https://soundstage-api.herokuapp.com/api/v1/concerts', req)
     .then(res => res.json())
     .then(res => dispatch({
       type: "MAP_CONCERTS",

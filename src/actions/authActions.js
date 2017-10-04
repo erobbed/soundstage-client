@@ -13,7 +13,7 @@ export function authorize(code){
     const geo = navigator.geolocation
     geo.getCurrentPosition((position) => {
       dispatch({type: "SET_LOCATION", payload: position})
-      return fetch(`http://localhost:3000/api/v1/users?code=${code}`, body)
+      return fetch(`https://soundstage-api.herokuapp.com/api/v1/users?code=${code}`, body)
       .then(res => res.json())
       .then(res => {
         dispatch({
@@ -56,7 +56,7 @@ export function currentUser(jwt){
     const geo = navigator.geolocation
     geo.getCurrentPosition((position) => {
       dispatch({type: "SET_LOCATION", payload: position})
-      return fetch('http://localhost:3000/api/v1/me', body)
+      return fetch('https://soundstage-api.herokuapp.com/api/v1/me', body)
       .then(res => res.json())
       .then(res => {
           dispatch({type: "LOG_IN", payload: {

@@ -8,7 +8,7 @@ export function userConcerts(jwt){
   }
 
   return(dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/:user/concerts/`, body)
+    return fetch(`https://soundstage-api.herokuapp.com/api/v1/users/:user/concerts/`, body)
     .then(res => res.json())
     .then(res => dispatch({
       type: 'USER_CONCERTS',
@@ -28,7 +28,7 @@ export function addConcert(jwt, concert, id){
     }
   }
   return(dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/${concert.id}`, body)
+    return fetch(`https://soundstage-api.herokuapp.com/api/v1/users/${id}/concerts/${concert.id}`, body)
     .then(res => res.json())
     .then(res => dispatch({
       type: 'ADD_CONCERT',
@@ -47,7 +47,7 @@ export function removeConcert(jwt, concert, id){
     }
   }
   return(dispatch) => {
-    return fetch(`http://localhost:3000/api/v1/users/${id}/concerts/${concert.id}`, body)
+    return fetch(`https://soundstage-api.herokuapp.com/api/v1/users/${id}/concerts/${concert.id}`, body)
     .then(res => res.json())
     .then(res => dispatch({
       type: 'REMOVE_CONCERT',
@@ -59,7 +59,7 @@ export function removeConcert(jwt, concert, id){
 
 export function geocode(location){
   return (dispatch) =>{
-      return fetch(`http://localhost:3000/api/v1/geocode/${location}`)
+      return fetch(`https://soundstage-api.herokuapp.com/api/v1/geocode/${location}`)
       .then(res => res.json())
       .then(res => {
         console.log(res);
