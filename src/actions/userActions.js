@@ -61,6 +61,13 @@ export function geocode(location){
   return (dispatch) =>{
       return fetch(`http://localhost:3000/api/v1/geocode/${location}`)
       .then(res => res.json())
-      .then(res => console.log(res))
-  }
+      .then(res => {
+        console.log(res);
+        dispatch(
+        {
+          type: "CHANGE_LOCATION",
+          payload: res
+        })
+      }
+  )}
 }

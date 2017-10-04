@@ -6,6 +6,7 @@ import ViewContainer from '../assets/ViewContainer';
 class Home extends React.Component{
 
   render(){
+    console.log(this.props.latlong);
     return (
       <div>
         <h1 id="title">SoundStage</h1>
