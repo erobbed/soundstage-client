@@ -150,7 +150,16 @@ div.top{
   width: 95%;
 }
 
+form{
+  transform-origin: right;
+}
 
+input{
+  border-radius: .28571429rem;
+  border: 1px solid rgba(34,36,38,.15);
+  font-size: 12px;
+  height: 20px;
+}
 
 .ui.card>.content>.header, .ui.cards>.card>.content>.header.artist{
   color: white;
@@ -197,8 +206,39 @@ div.top{
   background: rgb(10,10,10)
 }
 
+.ui.inverted.button.compass{
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  padding: 0;
+  background: transparent;
+}
+
+.ui.inverted.button.compass:hover i{
+  font-size: 19px
+}
+
+.ui.inverted.button.compass:hover{
+  background: transparent;
+  color: white;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.ui.inverted.button.compass:focus{
+  background: transparent;
+  color: white;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+
 .ui.secondary.inverted.pointing.menu.main-nav{
   border-color: transparent
+}
+
+.ui.secondary.inverted.pointing.menu .item.location{
+  padding-bottom: 7px;
+  padding-right: 0px
 }
 
 .ui.centered.grid, .ui.centered.grid>.row, .ui.grid>.centered.row{
