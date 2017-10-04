@@ -36,7 +36,7 @@ class Explore extends React.Component{
 }
 
 function mapStateToProps(state){
-  return {concerts: state.concerts.list, latlong: state.users.latlong}
+  return {concerts: state.concerts.list, latlong: state.users.latlong, updates: state.users.updates}
 }
 
 export default connect(mapStateToProps)(Explore)

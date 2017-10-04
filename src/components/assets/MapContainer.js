@@ -64,7 +64,7 @@ export class MapContainer extends React.Component {
 }
 
 function mapStateToProps(state){
-  return {concerts: state.concerts.list, latlong: state.users.latlong}
+  return {concerts: state.concerts.list, latlong: state.users.latlong, updates: state.users.updates}
 }
 
 function mapDispatchToProps(dispatch){
