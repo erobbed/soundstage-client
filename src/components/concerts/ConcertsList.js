@@ -14,7 +14,6 @@ class ConcertsList extends React.Component{
   }
 
   render(){
-    console.log(this.props.concerts);
     const upcoming = this.props.concerts.filter((concert, index) => new Date(concert.date) >= Date.now() )
     const past = this.props.concerts.filter((concert, index) => new Date(concert.date) < Date.now())
 
