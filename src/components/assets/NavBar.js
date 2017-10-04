@@ -51,7 +51,7 @@ class NavBar extends React.Component {
         <Menu.Menu position="right" key="right">
           <Menu.Item key='location' className='location'>
             <Button icon inverted size='mini' className='compass' onClick={this.handleClick}><Icon size='large' name='compass'/></Button>
-            <LocationForm close={this.close} id='location'/>
+            <LocationForm id='location' close={this.handleClick}/>
           </Menu.Item>
           <Menu.Item key="logout">
             <Button basic inverted secondary color="black" id="logout" onClick={this.handleLogout}>Log Out</Button>

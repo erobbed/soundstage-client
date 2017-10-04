@@ -17,6 +17,7 @@ class LocationForm extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.geocode(this.state.input)
+    this.setState({input: ''}, () => this.props.close)
   }
 
 
