@@ -6,14 +6,14 @@ import { view, reset } from '../../actions/concertActions'
 
 export class MapContainer extends React.Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
 
     this.state={
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      latlong: this.props.latlong
+      latlong: props.latlong
     }
   }
 
