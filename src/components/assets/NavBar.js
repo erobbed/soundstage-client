@@ -5,7 +5,8 @@ import { logOut} from '../../actions/authActions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import LocationForm from './Form';
-import {TweenMax } from 'gsap'
+import {TweenMax } from 'gsap';
+import Img from 'react-image';
 
 class NavBar extends React.Component {
   state = {
@@ -57,7 +58,7 @@ class NavBar extends React.Component {
             <Button basic inverted secondary color="black" id="logout" onClick={this.handleLogout}>Log Out</Button>
           </Menu.Item>
           <Menu.Item key="bubble">
-            <Image avatar src={this.props.user.profile_img_url} alt={this.props.user.username}/>
+            <Img avatar src={[this.props.user.profile_img_url, '/default.png']} alt={this.props.user.username}/>
             <p> {this.props.user.username}</p>
           </Menu.Item>
         </Menu.Menu>
