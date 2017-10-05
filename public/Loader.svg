@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs><path d="M56 128C43.85 128 34 137.85 34 150C34 162.15 43.85 172 56 172C68.15 172 78 162.15 78 150C78 137.85 68.15 128 56 128Z" id="dykos8fP0"></path><path d="M56 94C86.93 94 112 119.07 112 150" id="a1x8grJfYv"></path><path d="M56 50C111.23 50 156 94.77 156 150" id="f11E6NDAVD"></path><text id="aifl3uOJp" x="34" y="199.76" font-size="14" font-family="Montserrat" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -3.6026490066225136 -10.807947019867555)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge"><tspan x="34" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="start">Loading Your Artists</tspan></text><style id="montserratnormalnormal">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs>
+  <path d="M56 128C43.85 128 34 137.85 34 150C34 162.15 43.85 172 56 172C68.15 172 78 162.15 78 150C78 137.85 68.15 128 56 128Z" id="dykos8fP0">
+    <animate attributeName="fill-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
+  </path>
+<path d="M56 94C86.93 94 112 119.07 112 150" id="a1x8grJfYv">
+  <animate attributeName="stroke-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0.1s" repeatCount="indefinite"></animate>
+</path>
+<path d="M56 50C111.23 50 156 94.77 156 150" id="f11E6NDAVD">
+  <animate attributeName="stroke-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0.2s" repeatCount="indefinite"></animate>
+</path>
+<text id="aifl3uOJp" x="34" y="199.76" font-size="14" font-family="Montserrat" font-weight="normal" font-style="normal" letter-spacing="0" alignment-baseline="before-edge" transform="matrix(1 0 0 1 -3.6026490066225136 -10.807947019867555)" style="line-height:100%" xml:space="preserve" dominant-baseline="text-before-edge"><tspan x="34" dy="0em" alignment-baseline="before-edge" dominant-baseline="text-before-edge" text-anchor="start">Loading Your Artists</tspan>
+</text>
+<style id="montserratnormalnormal">
     @font-face {
     font-family: "Montserrat";
     font-weight: normal;
