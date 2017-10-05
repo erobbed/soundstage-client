@@ -81,6 +81,11 @@ div.home{
   margin: -1em 0;
 }
 
+.ui.secondary.menu .item>img:not(.ui){
+  margin-right: 10px;
+  border-radius: 2rem;
+}
+
 .ui.cards>.card>:first-child.artist{
   border-radius: 50% !important;
   border: solid;
@@ -321,7 +326,7 @@ p.load1:before {
     max-width: 30em;
     white-space: nowrap;
     color: rgb(30, 214, 96);
-    animation: loading 14s linear;
+    animation: loading 17s linear;
 }
 @keyframes loading {
     0% {
