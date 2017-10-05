@@ -310,7 +310,7 @@ body.body{
 h5.load1 {
     position: relative;
     color: black;
-    font-size: 5em
+    font-size: 1em
 }
 h5.load1:before {
     content: attr(data-text);
