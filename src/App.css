@@ -307,12 +307,13 @@ body.body{
 
 }
 
-p {
+p.load1 {
     position: relative;
     color: black;
-    font-size: 1em
+    font-size: 1em;
+    top: 10px;
 }
-p:before {
+p.load1:before {
     content: attr(data-text);
     position: absolute;
     overflow: hidden;
