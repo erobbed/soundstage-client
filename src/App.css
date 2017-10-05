@@ -307,12 +307,12 @@ body.body{
 
 }
 
-h1.load1 {
+h5.load1 {
     position: relative;
     color: black;
     font-size: 5em
 }
-h1.load1:before {
+h5.load1:before {
     content: attr(data-text);
     position: absolute;
     overflow: hidden;
