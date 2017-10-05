@@ -17,6 +17,7 @@ export default function isAuthenticated(WrappedComponent){
         <NavBar className="nav" history={props.history}/>
         {props.loading ? <Dimmer active>
           <Loader size='massive' className="radio">
+            <p className="load1" data-text="Loading your artists...">Loading your artists...</p>
           </Loader>
         </Dimmer> : null }
         <WrappedComponent {...props} />

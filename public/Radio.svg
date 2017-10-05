@@ -8,5 +8,4 @@
     <path d="M28 25A50 50 0 0 1 78 75" fill="none" ng-attr-stroke="{{config.c3}}" stroke-width="10" stroke="#1ed660">
       <animate attributeName="stroke-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0.2s" repeatCount="indefinite"></animate>
     </path>
-    <text x="0" y="50" font-family="Verdana" font-size="25" fill="white">Loading Your Artists</text>
   </svg>
