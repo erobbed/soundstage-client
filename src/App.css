@@ -311,14 +311,14 @@ p.load1 {
     position: relative;
     color: black;
     font-size: 1em;
-    transform: translate(40px, 30px);
+    transform: translate(40px, 50px);
 
 }
 p.load1:before {
     content: attr(data-text);
     position: absolute;
     overflow: hidden;
-    max-width: 20em;
+    max-width: 30em;
     white-space: nowrap;
     color: rgb(30, 214, 96);
     animation: loading 12s linear;
