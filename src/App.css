@@ -29,7 +29,6 @@ a.purchase{
 
 .ui.massive.loader.radio:before{
   border: none;
-  position: relative;
   background-image: url('/Radio.svg');
   height: 13.571429rem;
   width: 17.571429rem
@@ -309,7 +308,7 @@ body.body{
 }
 
 p.load1 {
-    position: absolute;
+    position: relative;
     color: black;
     font-size: 1em;
     top: 10px;
