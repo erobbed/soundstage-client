@@ -29,7 +29,7 @@ a.purchase{
 
 .ui.massive.loader.radio:before{
   border: none;
-  background-image: url('/Loader.svg');
+  background-image: url('/Radio.svg');
   height: 13.571429rem;
   width: 17.571429rem
 }
@@ -305,4 +305,24 @@ body.body{
   background-repeat: no-repeat;
   padding-top: 100px;
 
+}
+
+h1.load1 {
+    position: relative;
+    color: black;
+    font-size: 5em
+}
+h1.load1:before {
+    content: attr(data-text);
+    position: absolute;
+    overflow: hidden;
+    max-width: 20em;
+    white-space: nowrap;
+    color: rgb(30, 214, 96);
+    animation: loading 12s linear;
+}
+@keyframes loading {
+    0% {
+        max-width: 0;
+    }
 }
