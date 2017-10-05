@@ -1,5 +1,5 @@
 <svg width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-radio" style="background: none;">
-    <text x="0" y="50" font-family="Verdana" font-size="35" fill="white">Loading Your Artists</text>
+    <text x="0" y="0" font-family="Verdana" font-size="25" fill="white">Loading Your Artists</text>
     <circle cx="28" cy="75" r="11" ng-attr-fill="{{config.c1}}" fill="#1ed660">
       <animate attributeName="fill-opacity" calcMode="linear" values="0;1;1" keyTimes="0;0.2;1" dur="1" begin="0s" repeatCount="indefinite"></animate>
     </circle>
