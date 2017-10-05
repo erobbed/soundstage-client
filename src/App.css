@@ -311,7 +311,7 @@ p.load1 {
     position: relative;
     color: black;
     font-size: 1em;
-    transform: translate(60px, 70px);
+    transform: translate(60px, 100px);
 
 }
 p.load1:before {
